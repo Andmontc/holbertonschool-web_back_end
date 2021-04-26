@@ -3,7 +3,7 @@
 
 
 def to_str(n: float) -> str:
-  """ Function that returns a string
-    n: float
-  Return: a string representation """
-  return str(n)
+    """ Function that returns a string
+      n: float
+    Return: a string representation """
+    return str(n)
