@@ -9,11 +9,16 @@ class FIFOCache(BaseCaching):
     """ FIFO class """
 
     def __init__(self):
+        """ overload init """
         super().__init__()
         self.__datakeys = []
 
     def put(self, key, item):
         """ function that put items in dict """
+
+        if key is None or item is None:
+            return None
+
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS and \
                 key not in self.__datakeys:
             discard = self.__datakeys.pop(0)
