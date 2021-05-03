@@ -6,16 +6,15 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """ FIFo class """
+    """ FIFO class """
 
     def __init__(self):
-        """ overload init """
         super().__init__()
         self.__datakeys = []
 
     def put(self, key, item):
         """ function that put items in dict """
-        if len(self.cache_data) == BaseCaching.MAX_ITEMS and \
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS and \
                 key not in self.__datakeys:
             discard = self.__datakeys.pop(0)
             del self.cache_data[discard]
