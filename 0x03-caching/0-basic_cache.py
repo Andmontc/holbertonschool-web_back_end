@@ -8,12 +8,10 @@ from base_caching import BaseCaching
 class BasicCache(BaseCaching):
     """ class that set and get itmes from a dict """
 
-
     def put(self, key, item):
         """ function that set an item to the dict """
         if key and item:
             self.cache_data[key] = item
-
 
     def get(self, key):
         """ function that get the item from the dict """
