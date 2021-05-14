@@ -17,7 +17,7 @@ class Auth():
             for route in excluded_paths:
                 path = path.replace('/', '')
                 route = route.replace('/', '')
-            return False
+                return False
         return True
 
     def authorization_header(self, request=None) -> str:
