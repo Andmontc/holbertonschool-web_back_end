@@ -19,10 +19,10 @@ class Auth():
                     path = path.replace('/', '')
                     route = route.replace('/', '')
 
-                    if pth[-1] == '*':
-                        pth = pth.replace('*', '.*')
+                    if route[-1] == '*':
+                        route = route.replace('*', '.*')
 
-                    if re.search(pth, path):
+                    if re.search(route, path):
                         return False
 
         return True
