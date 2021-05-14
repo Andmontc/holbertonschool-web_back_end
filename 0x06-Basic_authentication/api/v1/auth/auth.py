@@ -12,18 +12,18 @@ class Auth():
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """ require auth method """
         if path and excluded_paths:
-              if path[-1] != '/':
-                    path += '/'
-              for route in excluded_paths:
+            if path[-1] != '/':
+                path += '/'
+            for route in excluded_paths:
 
-                    path = path.replace('/', '')
-                    route = route.replace('/', '')
+                path = path.replace('/', '')
+                route = route.replace('/', '')
 
-                    if route[-1] == '*':
-                        route = route.replace('*', '.*')
+                if route[-1] == '*':
+                    route = route.replace('*', '.*')
 
-                    if re.search(route, path):
-                        return False
+                if re.search(route, path):
+                    return False
 
         return True
 
