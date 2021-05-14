@@ -25,7 +25,7 @@ class Auth():
                     if re.search(pth, path):
                         return False
 
-          return True
+        return True
 
     def authorization_header(self, request=None) -> str:
         """ auth header method """
